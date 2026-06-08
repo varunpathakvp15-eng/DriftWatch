@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════
+   SYNTHETIC NATION — Global Design System
+   ═══════════════════════════════════════════════════ */
+
+@import './fonts.css';
+@import "tailwindcss";
+
+/* ─── Color Tokens ─── */
+:root {
+  --color-void:              #0a0c10;
+  --color-surface:           #111318;
+  --color-surface-low:       #1a1c20;
+  --color-surface-container: #1e2024;
+  --color-surface-high:      #282a2e;
+  --color-surface-highest:   #333539;
+  --color-surface-bright:    #37393e;
+
+  --color-primary:           #00e5ff;
+  --color-primary-dim:       #00daf3;
+  --color-primary-glow:      rgba(0, 229, 255, 0.15);
+  --color-primary-border:    rgba(0, 229, 255, 0.20);
+
+  --color-secondary:         #bdc2ff;
+  --color-secondary-deep:    #343d96;
+
+  --color-alert:             #ff0055;
+  --color-alert-dim:         rgba(255, 0, 85, 0.15);
+  --color-alert-border:      rgba(255, 0, 85, 0.40);
+
+  --color-warn:              #ffb347;
+  --color-warn-dim:          rgba(255, 179, 71, 0.15);
+
+  --color-success:           #1aad6e;
+  --color-success-dim:       rgba(26, 173, 110, 0.15);
+
+  --color-text-primary:      #e2e2e8;
+  --color-text-secondary:    #bac9cc;
+  --color-text-dim:          #849396;
+  --color-text-ghost:        #3d5470;
+
+  --color-border:            #3b494c;
+  --color-border-dim:        rgba(59, 73, 76, 0.5);
+
+  /* Typography font stacks */
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'PT Serif', serif;
+  --font-data: 'Bitcount Single', 'Courier New', monospace;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: var(--color-void);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+/* Force 0 border-radius on EVERYTHING */
+* {
+  border-radius: 0 !important;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* ─── Typography Classes ─── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.font-body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+.font-data {
+  font-family: var(--font-data);
+  line-height: 1;
+}
+
+/* ─── Glass Panel Base ─── */
+.glass-panel {
+  background: rgba(26, 28, 32, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-primary-border);
+}
+
+/* ─── Primary Glow ─── */
+.primary-glow {
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3),
+              0 0 2px rgba(0, 229, 255, 0.6);
+}
+
+/* ─── Alert Glow ─── */
+.alert-glow {
+  box-shadow: 0 0 8px rgba(255, 0, 85, 0.3),
+              0 0 2px rgba(255, 0, 85, 0.6);
+}
+
+/* ─── Chamfered Button ─── */
+.chamfered {
+  clip-path: polygon(
+    8px 0%, 100% 0%, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 0% 100%, 0% 8px
+  );
+}
+
+/* ─── Cursor Overrides ─── */
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
+/* Override pointer cursor globally for interactive elements */
+a, button, [role="button"], input[type="submit"], input[type="button"] {
+  cursor: crosshair;
+}
+
+input, textarea, [contenteditable] {
+  cursor: text;
+}
+
+/* ─── Animations ─── */
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Pulse ring for map markers */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Terminal entry slide-in */
+@keyframes terminal-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.terminal-entry {
+  animation: terminal-slide-in 150ms ease-out;
+}
+
+/* Typewriter cursor after */
+.typewriter-cursor::after {
+  content: '█';
+  color: var(--color-primary);
+  animation: blink 1s step-end infinite;
+}
+
+/* Glow hover transition */
+.glow-hover {
+  transition: box-shadow 150ms ease-out, border-color 150ms ease-out;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+}
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-out;
+}
+.page-exit {
+  opacity: 1;
+}
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+/* Segment fill animation */
+@keyframes segment-fill {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Number count-up - handled via JS requestAnimationFrame */
+
+/* ─── Leaflet Overrides ─── */
+.leaflet-container {
+  background: var(--color-void) !important;
+  border-radius: 0 !important;
+}
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  display: none !important;
+}
+.leaflet-tile-pane {
+  filter: brightness(0.7) contrast(1.1) saturate(0.3);
+}
+
+/* Custom map marker */
+.map-marker {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50% !important;
+  position: relative;
+}
+.map-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* ─── Recharts Overrides ─── */
+.recharts-cartesian-grid line {
+  stroke: var(--color-border-dim);
+  stroke-opacity: 0.05;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 767px) {
+  body::before {
+    content: 'TERMINAL REQUIRES MINIMUM 768PX DISPLAY';
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-void);
+    color: var(--color-primary);
+    font-family: var(--font-data);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    z-index: 99999;
+    text-align: center;
+    padding: 24px;
+  }
+  body > * {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --sidenav-width: 48px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root {
+    --font-scale: 0.9;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --font-scale: 1;
+    --sidenav-width: 240px;
+  }
+}

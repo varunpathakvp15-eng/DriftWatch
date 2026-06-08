@@ -1,0 +1,9 @@
+aiofiles
+networkx
+httpx
+numpy
+openai
+pydantic
+pytest
+pytest-asyncio
+scipy
