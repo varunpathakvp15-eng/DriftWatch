@@ -12,6 +12,17 @@ interface WizardQuestion {
   options: string[];
 }
 
+const DEMO_POLICY_DEFAULTS: Record<string, string[]> = {
+  'railway-fare-20': ['A', 'B', 'A', 'A'],
+  'metro-free-women': ['B', 'C', 'C', 'D'],
+  'neet-online': ['B', 'B', 'C', 'C'],
+  'fuel-price-15': ['A', 'A', 'B', 'A'],
+  'wfh-mandate-removed': ['A', 'A', 'A', 'A'],
+  'odd-even': ['A', 'A', 'B', 'B'],
+  'exam-fee-waived-bpl': ['B', 'B', 'A', 'A'],
+  'mgnrega-wage-100': ['B', 'A', 'A', 'B'],
+};
+
 const questionsByCategory: Record<PolicyCategory, WizardQuestion[]> = {
   TRANSPORT: [
     { id: 'q1', text: 'Who does this policy primarily affect?', options: ['All commuters', 'Only public transit users', 'Private vehicle owners', 'Specific income groups only'] },
@@ -64,7 +75,10 @@ export default function PolicyQuestions() {
   const category = policy?.category || policyCategory || fallbackCategory(policy?.fullText || customPolicyText);
   const questions = questionsByCategory[category];
   const current = questions[currentIndex];
-  const selected = questionAnswers[current.id];
+  const demoDefaults = policy?.id ? DEMO_POLICY_DEFAULTS[policy.id] : undefined;
+  const answerKey = demoDefaults ? `${policy!.id}:${current.id}` : current.id;
+  const defaultSelected = demoDefaults?.[currentIndex];
+  const selected = questionAnswers[answerKey] || defaultSelected;
   const city = useMemo(() => getCityById(cityId || ''), [cityId]);
 
   useEffect(() => {
@@ -78,6 +92,8 @@ export default function PolicyQuestions() {
 
   const next = () => {
     if (!selected) return;
+    setQuestionAnswer(answerKey, selected);
+    setQuestionAnswer(current.id, selected);
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((index) => index + 1);
       return;
@@ -139,7 +155,10 @@ export default function PolicyQuestions() {
               return (
                 <button
                   key={option}
-                  onClick={() => setQuestionAnswer(current.id, letter)}
+                  onClick={() => {
+                    setQuestionAnswer(answerKey, letter);
+                    setQuestionAnswer(current.id, letter);
+                  }}
                   style={{
                     width: '100%',
                     minHeight: 52,
