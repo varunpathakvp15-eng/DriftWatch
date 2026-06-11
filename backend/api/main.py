@@ -56,6 +56,12 @@ app.include_router(policy.router, prefix="/api")
 app.include_router(validation.router, prefix="/api")
 
 
+@app.on_event("startup")
+async def startup_event():
+    from backend.data.database import init_db
+    await init_db()
+
+
 @app.get("/api/health")
 async def health():
     return {"status": "ok", "service": "synthetic-nation"}
