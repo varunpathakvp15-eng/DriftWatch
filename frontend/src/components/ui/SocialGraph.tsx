@@ -92,8 +92,8 @@ export default function SocialGraph({ nodes: inputNodes, width = 500, height = 3
 
       // 1. Draw links (edges)
       d3Links.forEach((link) => {
-        const source = link.source as d3.SimulationNodeDatum & GraphNode;
-        const target = link.target as d3.SimulationNodeDatum & GraphNode;
+        const source = link.source as any;
+        const target = link.target as any;
         if (!source || !target || source.x === undefined || source.y === undefined || target.x === undefined || target.y === undefined) return;
 
         const isHighlighted = hoveredNodeRef.current && 
@@ -115,7 +115,7 @@ export default function SocialGraph({ nodes: inputNodes, width = 500, height = 3
 
       // 2. Draw nodes
       d3Nodes.forEach((nodeAny: unknown) => {
-        const node = nodeAny as d3.SimulationNodeDatum & GraphNode;
+        const node = nodeAny as any;
         if (node.x === undefined || node.y === undefined) return;
         const color = actionColors[node.action] || '#849396';
         const isTriggered = node.action === 'protest_join' || node.action === 'broadcast';
@@ -156,11 +156,11 @@ export default function SocialGraph({ nodes: inputNodes, width = 500, height = 3
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
 
-      let closest: (d3.SimulationNodeDatum & GraphNode) | null = null;
+      let closest: any = null;
       let minDistance = 16;
 
       d3Nodes.forEach((nodeAny: unknown) => {
-        const node = nodeAny as d3.SimulationNodeDatum & GraphNode;
+        const node = nodeAny as any;
         if (node.x === undefined || node.y === undefined) return;
         const dx = node.x - mouseX;
         const dy = node.y - mouseY;
