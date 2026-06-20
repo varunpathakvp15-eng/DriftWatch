@@ -1,6 +1,6 @@
-# Synthetic Nation Data Ingestion Layer
+# Driftwatch Data Ingestion Layer
 """
-Data ingestion modules for the Synthetic Nation simulation platform.
+Data ingestion modules for the Driftwatch simulation platform.
 
 Modules:
     config_loader   — Async config resolution with zone→city→state→defaults hierarchy

@@ -1,8 +1,8 @@
-# Synthetic Nation Architecture
+# Driftwatch Architecture
 
 ## Implemented Runtime
 
-Synthetic Nation currently runs as a React frontend and FastAPI backend. The
+Driftwatch currently runs as a React frontend and FastAPI backend. The
 frontend posts a city, policy, population, horizon, and seed to `/api/simulate`.
 The backend parses the policy, selects a configured city zone, runs the real
 `SimulationEngine`, and streams one computed SSE event per day.

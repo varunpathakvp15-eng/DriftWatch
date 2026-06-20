@@ -1,5 +1,5 @@
 """
-config_loader.py — Async hierarchical configuration loader for Synthetic Nation.
+config_loader.py — Async hierarchical configuration loader for Driftwatch.
 
 Resolution order: zone → city → state → defaults.json
 Every parameter tracks where it was resolved from in `resolved_from`.

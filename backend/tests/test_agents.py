@@ -1,5 +1,5 @@
 """
-test_agents.py — Unit tests + smoke test for Synthetic Nation Part 2.
+test_agents.py — Unit tests + smoke test for Driftwatch Part 2.
 
 Test suites:
     1. TestPersonalityVectorDistribution — population spawning validation

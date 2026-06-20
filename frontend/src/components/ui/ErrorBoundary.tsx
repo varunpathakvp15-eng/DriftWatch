@@ -13,7 +13,7 @@ export class ErrorBoundary extends React.Component<React.PropsWithChildren, Erro
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Synthetic Nation error:', error, errorInfo);
+    console.error('Driftwatch error:', error, errorInfo);
   }
 
   render() {

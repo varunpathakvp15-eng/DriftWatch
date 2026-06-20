@@ -1,5 +1,5 @@
 """
-social_network.py — Scale-free social network for Synthetic Nation.
+social_network.py — Scale-free social network for Driftwatch.
 
 Builds a Barabási–Albert network with archetype-aware edge rewiring
 and modified SIR dynamics for influence propagation.

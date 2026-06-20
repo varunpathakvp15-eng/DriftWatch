@@ -1,5 +1,5 @@
 """
-database.py — Database configuration and connection manager for Synthetic Nation.
+database.py — Database configuration and connection manager for Driftwatch.
 """
 
 from __future__ import annotations

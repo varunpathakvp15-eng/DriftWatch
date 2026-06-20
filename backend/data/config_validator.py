@@ -1,5 +1,5 @@
 """
-config_validator.py — Standalone validation for all Synthetic Nation zone configs.
+config_validator.py — Standalone validation for all Driftwatch zone configs.
 
 Validates every zone JSON file against the required schema, checks
 archetype weight sums, income decile distributions, required fields,
@@ -426,7 +426,7 @@ def print_report(results: list[ZoneValidationResult]) -> bool:
 
     print()
     print("═" * 60)
-    print("  SYNTHETIC NATION — CONFIG VALIDATOR REPORT")
+    print("  DRIFTWATCH — CONFIG VALIDATOR REPORT")
     print("═" * 60)
     print()
 

@@ -1,5 +1,5 @@
 """
-census_loader.py — Ward-level demographic data loader for Synthetic Nation.
+census_loader.py — Ward-level demographic data loader for Driftwatch.
 
 For MVP, demographic baselines are read from zone config ``demographics``
 sections. When actual Census 2011 CSV files become available, the

@@ -1,1 +1,1 @@
-"""Reproducible performance benchmarks for Synthetic Nation."""
+"""Reproducible performance benchmarks for Driftwatch."""

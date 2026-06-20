@@ -1,5 +1,5 @@
 """
-redteam_agent.py — Adversarial Red-Team Agent for Synthetic Nation.
+redteam_agent.py — Adversarial Red-Team Agent for Driftwatch.
 
 Stress-tests simulation scenarios to identify:
   • Edge cases the main simulation may miss

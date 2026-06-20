@@ -34,7 +34,7 @@ export default function Landing() {
             SN
           </div>
           <div>
-            <h1 className="text-lg font-semibold" style={{ color: 'var(--sn-text-primary)' }}>Synthetic Nation</h1>
+            <h1 className="text-lg font-semibold" style={{ color: 'var(--sn-text-primary)' }}>Driftwatch</h1>
             <p className="text-xs" style={{ color: 'var(--sn-text-muted)' }}>Autonomous Policy Simulation Engine</p>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Landing() {
           <span style={{ color: 'var(--sn-accent-blue)' }}>before testing on real ones.</span>
         </h2>
         <p className="text-base max-w-2xl mx-auto mb-10" style={{ color: 'var(--sn-text-secondary)', lineHeight: 1.7 }}>
-          Synthetic Nation simulates 100,000 autonomous AI agents — each with unique income, commute patterns,
+          Driftwatch simulates 100,000 autonomous AI agents — each with unique income, commute patterns,
           and social networks — to predict how policy changes ripple through Indian cities with sub-7% error.
         </p>
 

@@ -1,5 +1,6 @@
-# Synthetic Nation — Agent Engine
+# Driftwatch — Agent Engine
 # Tiered cognition: Tier 1 (vector), Tier 2 (Ollama/Llama), Tier 3 (OpenAI GPT-4o-mini)
+# + CaseworkerAgent with pluggable model backends for oversight-decay simulation
 
 from backend.agents.tier1_agent import (
     Tier1Agent,

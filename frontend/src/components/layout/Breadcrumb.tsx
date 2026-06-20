@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSimulationContext } from '../../context/SimulationContext';
-import logoImg from '../../assets/synterra-logo.jpg';
+import logoImg from '../../assets/driftwatch-logo.png';
 
 const steps = ['City', 'Policy', 'Questions', 'Simulate', 'Results'];
 
@@ -63,7 +63,7 @@ export const Breadcrumb: React.FC = () => {
       >
         <img
           src={logoImg}
-          alt="Synterra Logo"
+          alt="Driftwatch Logo"
           style={{
             height: 32,
             width: 'auto',
@@ -80,7 +80,7 @@ export const Breadcrumb: React.FC = () => {
             letterSpacing: '0.15em',
           }}
         >
-          SYNTERRA
+          DRIFTWATCH
         </span>
       </button>
 

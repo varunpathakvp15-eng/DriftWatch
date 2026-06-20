@@ -1,5 +1,5 @@
 """
-main.py — FastAPI application for Synthetic Nation.
+main.py — FastAPI application for Driftwatch.
 
 Runs at http://localhost:8000.
 CORS is enabled for the local Vite dev server and containerized frontend.
@@ -12,7 +12,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.api.routes import simulation, causal, policy, validation
+from backend.api.routes import simulation, causal, policy, validation, driftwatch
 
 
 class Settings:
@@ -32,8 +32,8 @@ class Settings:
 settings = Settings()
 
 app = FastAPI(
-    title="Synterra API",
-    description="Policy simulation engine with autonomous multi-tier agents",
+    title="Driftwatch API",
+    description="Oversight-decay simulation — measuring how fast human oversight of AI decisions collapses",
     version="1.0.0",
     docs_url="/docs" if settings.debug else None,
     redoc_url=None,
@@ -54,6 +54,7 @@ app.include_router(simulation.router, prefix="/api")
 app.include_router(causal.router, prefix="/api")
 app.include_router(policy.router, prefix="/api")
 app.include_router(validation.router, prefix="/api")
+app.include_router(driftwatch.router, prefix="/api")
 
 
 @app.on_event("startup")
@@ -64,7 +65,7 @@ async def startup_event():
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "service": "synthetic-nation"}
+    return {"status": "ok", "service": "driftwatch"}
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 """
-Synthetic Nation — Tier 3 Agent Engine
-======================================
+Driftwatch — Tier 3 Agent Engine
+=================================
 
 OpenAI GPT-4o-mini powered elite agents.
 ~1,000 agents in a full simulation.

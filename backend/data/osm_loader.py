@@ -1,5 +1,5 @@
 """
-osm_loader.py — OpenStreetMap transport network extractor for Synthetic Nation.
+osm_loader.py — OpenStreetMap transport network extractor for Driftwatch.
 
 Downloads metro stations, bus stops, railway stations, and road network
 from the Overpass API within a city's bounding box, and builds a

@@ -2,12 +2,12 @@
 set -e
 
 # Generate a unique project ID
-PROJECT_ID="synterra-$(date +%s)"
+PROJECT_ID="driftwatch-$(date +%s)"
 BILLING_ACCOUNT="015646-FA5C86-358112"
 REGION="us-central1"
 
 echo "Creating GCP Project: $PROJECT_ID..."
-gcloud projects create $PROJECT_ID --name="Synterra"
+gcloud projects create $PROJECT_ID --name="Driftwatch"
 
 echo "Linking billing account..."
 gcloud billing projects link $PROJECT_ID --billing-account=$BILLING_ACCOUNT
@@ -20,7 +20,7 @@ gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregi
 
 echo "Deploying Backend..."
 # Deploy backend
-gcloud run deploy synterra-backend \
+gcloud run deploy driftwatch-backend \
   --source ./backend \
   --region $REGION \
   --allow-unauthenticated \
@@ -37,8 +37,8 @@ gcloud builds submit . \
   --project $PROJECT_ID
 
 echo "Deploying Frontend..."
-gcloud run deploy synterra-frontend \
-  --image gcr.io/$PROJECT_ID/synterra-frontend \
+gcloud run deploy driftwatch-frontend \
+  --image gcr.io/$PROJECT_ID/driftwatch-frontend \
   --region $REGION \
   --allow-unauthenticated \
   --project $PROJECT_ID \

@@ -1,5 +1,6 @@
 """
-engine.py — SimulationEngine: the central simulation loop for Synthetic Nation.
+Driftwatch — Core Simulation Engine
+====================================
 
 Orchestrates the 10-step discrete-time simulation:
   1. Tier 1 batch decisions (personality vector — sub-ms per agent)

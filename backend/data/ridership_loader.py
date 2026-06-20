@@ -1,5 +1,5 @@
 """
-ridership_loader.py — Transit ridership baseline loader for Synthetic Nation.
+ridership_loader.py — Transit ridership baseline loader for Driftwatch.
 
 Reads daily ridership data from city transport_network configs and
 structures it for simulation calibration. Supports filtering by mode

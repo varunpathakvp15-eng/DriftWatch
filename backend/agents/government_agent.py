@@ -1,5 +1,5 @@
 """
-government_agent.py — Autonomous Government Agent for Synthetic Nation.
+government_agent.py — Autonomous Government Agent for Driftwatch.
 
 Monitors simulation state against configurable thresholds and:
   • Fires alerts (info / warning / critical) when metrics cross boundaries

@@ -1,6 +1,6 @@
 """
-tier1_agent.py — Core Tier 1 citizen agent engine for Synthetic Nation.
-
+Driftwatch — Tier 1 Agent Engine
+=================================
 Implements the 14 archetypes defined in AGENT_SPEC.md with pure NumPy
 vectorised operations.  No LLM calls.  Every decision function uses
 np.where for conditional logic; individual agent decision_step is a

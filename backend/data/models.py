@@ -1,5 +1,5 @@
 """
-models.py — SQLAlchemy database models for Synthetic Nation.
+models.py — SQLAlchemy database models for Driftwatch.
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# SYNTHETIC NATION — MVP SCOPE
+# DRIFTWATCH — MVP SCOPE
 
 ## Core Theme Commitment
 Every MVP feature must demonstrate autonomous agent behaviour.
@@ -328,7 +328,7 @@ guess — tested on real people. NEET 2024 affected 2.4 million
 students. Delhi's odd-even scheme disrupted ₹1,200 crore of
 economic activity. None of these were tested first.
 
-Synthetic Nation changes that. Not with a chatbot. Not with a
+Driftwatch changes that. Not with a chatbot. Not with a
 dashboard. With 100,000 autonomous AI citizens who live, remember,
 reason, and resist — before any real person is affected."
 

@@ -1,4 +1,4 @@
-# SYNTHETIC NATION — PROJECT BRIEF
+# DRIFTWATCH — PROJECT BRIEF
 
 ## What This Project Is
 A policy stress-testing platform where governments simulate the
@@ -9,7 +9,7 @@ NOT a prediction engine. NOT an oracle.
 A crash-test dummy for policy — powered by autonomous agents.
 
 ## One-Sentence Pitch
-"Synthetic Nation is an autonomous multi-agent simulation platform
+"Driftwatch is an autonomous multi-agent simulation platform
 where 100,000 AI citizens with individual memory, reasoning, and social
 networks stress-test government policy decisions — before real people
 pay the consequences."
@@ -48,7 +48,7 @@ argument for what autonomous agent systems can do at scale.
 ## Secondary Theme: Space Technology (if applicable to FAR AWAY)
 If the hackathon requires space technology framing, the connection is:
 - ISRO uses agent-based simulation for mission planning and resource
-  allocation. Synthetic Nation's architecture is directly applicable
+  allocation. Driftwatch's architecture is directly applicable
   to autonomous satellite constellation management — agents as
   satellites, policy inputs as orbital manoeuvre commands, emergent
   behaviour as constellation coordination outcomes.
@@ -63,7 +63,7 @@ If the hackathon requires space technology framing, the connection is:
 If the hackathon awards points for hardware integration:
 
 ### Option A — Raspberry Pi Policy Terminal (Simplest)
-A Raspberry Pi 4 running a stripped-down Synthetic Nation client.
+A Raspberry Pi 4 running a stripped-down Driftwatch client.
 Physical keyboard input for policy statements. Small display showing
 live simulation metrics streaming from the cloud backend.
 Makes the "deployable by a district collector" narrative tangible.
@@ -136,7 +136,7 @@ Most submissions on this theme will build:
 - Workflow automation pipelines
 - Single-agent task runners
 
-Synthetic Nation builds:
+Driftwatch builds:
 - 100,000 autonomous agents acting without instruction
 - A multi-tier agent hierarchy with emergent coordination
 - Agents that form coalitions nobody programmed

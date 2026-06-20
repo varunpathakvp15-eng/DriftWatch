@@ -1,4 +1,4 @@
-# SYNTHETIC NATION — CREDIBILITY SHIELD
+# DRIFTWATCH — CREDIBILITY SHIELD
 # This file exists to answer every judge attack before it is asked.
 # Every claim in this project must be defensible using this document.
 # If a claim cannot be defended here, it is removed from the project.
@@ -10,7 +10,7 @@
 
 The single most important sentence in the entire submission:
 
-★ "Synthetic Nation is not a prediction system.
+★ "Driftwatch is not a prediction system.
    It is a structured assumption stress-tester.
    It makes your assumptions explicit, then shows you
    where they lead — so you can argue about the assumptions
@@ -148,7 +148,7 @@ In a rule-based system, if you increase railway fares 20%,
 you get: ridership_drop = 0.15 × passengers. Always.
 Same input, same output. No surprise.
 
-In Synthetic Nation, running the same 20% fare hike
+In Driftwatch, running the same 20% fare hike
 across 5 different seed values produced:
 
 Seed 001: Protest coalition formed in Shahdara. Day 11.
@@ -290,7 +290,7 @@ That is the claim. Not "the model is perfect."
 ★ Black swan events (COVID-scale disruptions)
 
 ### The honest framing:
-"Synthetic Nation models rational-economic behaviour well.
+"Driftwatch models rational-economic behaviour well.
 It models social-cultural behaviour approximately.
 It does not model irrational collective psychology.
 These are known limitations that we document explicitly.
@@ -382,7 +382,7 @@ not a 6-year procurement cycle."
 ## (Weakness 14 — the bias and manipulation attacks)
 
 ### On algorithmic bias:
-"Synthetic Nation's personality vectors are derived from
+"Driftwatch's personality vectors are derived from
 nationally representative survey data (NSSO, Lokniti-CSDS).
 These surveys themselves carry sampling biases —
 primarily urban, primarily formal economy representation.
@@ -403,7 +403,7 @@ Three structural safeguards built into the platform:
 
 "The most dangerous policy tool is one that hides its assumptions.
 Excel spreadsheets with embedded formulas are more dangerous
-than Synthetic Nation because their assumptions are hidden.
+than Driftwatch because their assumptions are hidden.
 We make every assumption explicit and auditable."
 
 ### On synthetic citizens and representation:
@@ -425,7 +425,7 @@ SimCity: designer pre-programs all outcomes.
 If you zone residential next to industrial, smog happens
 because Will Wright wrote that rule in 1989.
 
-Synthetic Nation: no outcome is pre-programmed.
+Driftwatch: no outcome is pre-programmed.
 The system does not know that a protest will form
 on day 11 in Shahdara when a fare hike is applied.
 Nobody told it that vendor bandhs are more likely
@@ -441,7 +441,7 @@ dependency. That outcome came from:
     vendor-led response instead of commuter-led response
 
 SimCity tells you what will happen.
-Synthetic Nation shows you what could happen
+Driftwatch shows you what could happen
 and why it would happen through traceable agent decisions.
 
 ---

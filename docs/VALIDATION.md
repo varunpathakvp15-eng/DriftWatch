@@ -1,4 +1,4 @@
-# SYNTHETIC NATION — VALIDATION METHODOLOGY
+# DRIFTWATCH — VALIDATION METHODOLOGY
 
 > Current disclosure: the repository bundles frozen illustrative benchmark rows
 > and an executable arithmetic reproduction script. It does not bundle independently
@@ -26,13 +26,13 @@ more credible with technically sophisticated judges, not less.
 - Scenario: Modal shift over 18-month post-opening period
 
 ### Result
-- Synthetic Nation predicted: 340,000 daily ridership increase
+- Driftwatch predicted: 340,000 daily ridership increase
 - DMRC 2024 actual figure: 318,000
 - Error margin: 6.9%
 
 ### Significance
 No purely statistical model predicted within 15% without post-hoc calibration
-on the actual data. Synthetic Nation used only pre-opening data.
+on the actual data. Driftwatch used only pre-opening data.
 
 ## Validation Case 2: NEET 2024 Examination Trust Collapse
 

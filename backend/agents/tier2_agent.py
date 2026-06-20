@@ -1,6 +1,6 @@
 """
-Synthetic Nation — Tier 2 Agent Engine
-======================================
+Driftwatch — Tier 2 Agent Engine
+=================================
 
 Ollama-powered (Llama 3.1 8B) opinion leaders.
 ~4,000 agents in a full simulation.
