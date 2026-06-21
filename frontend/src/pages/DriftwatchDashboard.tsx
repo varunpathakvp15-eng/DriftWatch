@@ -42,7 +42,19 @@ interface RunResult {
   latencySkips: number;
   trustSkips: number;
   shockEvents: Array<{ timestep: number }>;
-  metrics?: any;
+  metrics?: {
+    time_to_threshold?: number | null;
+    final_avg_review_probability?: number;
+    final_silent_error_rate?: number;
+    oversight_debt?: number;
+    oversight_half_life?: number | string;
+    burst_error_contribution?: number;
+    latency_skips?: number;
+    trust_skips?: number;
+    shock_events?: Array<{ timestep: number }>;
+    final_avg_review_skill?: number;
+    skill_recovery_rate?: number;
+  };
 }
 
 /* ─── Model backends ─── */
@@ -955,13 +967,13 @@ export default function DriftwatchDashboard() {
                       <div>
                         <div style={{ fontFamily: 'var(--font-data)', fontSize: 9, color: '#00e5ff' }}>FINAL REVIEW SKILL</div>
                         <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: 'var(--color-text-primary)' }}>
-                          {(r.metrics?.final_avg_review_skill * 100 || 0).toFixed(1)}%
+                          {((r.metrics?.final_avg_review_skill || 0) * 100).toFixed(1)}%
                         </div>
                       </div>
                       <div>
                         <div style={{ fontFamily: 'var(--font-data)', fontSize: 9, color: '#00e5ff' }}>SKILL RECOVERY</div>
                         <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: 'var(--color-text-primary)' }}>
-                          +{(r.metrics?.skill_recovery_rate * 100 || 0).toFixed(2)}%/step
+                          +{((r.metrics?.skill_recovery_rate || 0) * 100).toFixed(2)}%/step
                         </div>
                       </div>
                     </div>
@@ -1008,7 +1020,7 @@ export default function DriftwatchDashboard() {
                           />
                         );
                       })}
-                      {results[0]?.shockEvents?.map((evt, i) => (
+                      {results[0]?.shockEvents?.map((evt: { timestep: number }, i: number) => (
                         <ReferenceLine key={`shock_${i}`} x={evt.timestep} stroke="var(--color-alert)" strokeDasharray="3 3" label={{ position: 'top', value: 'SHOCK', fill: 'var(--color-alert)', fontSize: 10, fontFamily: 'var(--font-data)' }} />
                       ))}
                     </LineChart>
@@ -1120,7 +1132,7 @@ export default function DriftwatchDashboard() {
                           />
                         </React.Fragment>
                       ))}
-                      {results[0]?.shockEvents?.map((evt, i) => (
+                      {results[0]?.shockEvents?.map((evt: { timestep: number }, i: number) => (
                         <ReferenceLine key={`shock_${i}`} x={evt.timestep} stroke="var(--color-alert)" strokeDasharray="3 3" />
                       ))}
                     </LineChart>
@@ -1163,7 +1175,7 @@ export default function DriftwatchDashboard() {
                           />
                         );
                       })}
-                      {results[0]?.shockEvents?.map((evt, i) => (
+                      {results[0]?.shockEvents?.map((evt: { timestep: number }, i: number) => (
                         <ReferenceLine key={`shock_${i}`} x={evt.timestep} stroke="var(--color-alert)" strokeDasharray="3 3" label={{ position: 'top', value: 'SHOCK', fill: 'var(--color-alert)', fontSize: 10, fontFamily: 'var(--font-data)' }} />
                       ))}
                     </LineChart>

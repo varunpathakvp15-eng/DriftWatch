@@ -95,6 +95,24 @@ npm run dev
 docker-compose up
 ```
 
+## Testing & Validation
+
+Driftwatch includes comprehensive CI/CD validation to guarantee reproducibility. 
+
+### Backend Testing
+```bash
+cd backend
+python -m pytest -q
+python -m backend.validation.reproduce
+```
+
+### Frontend Testing
+```bash
+cd frontend
+npm run lint
+npm run build
+```
+
 ## Key Metrics
 
 | Metric | Description |
